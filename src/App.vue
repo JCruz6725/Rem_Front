@@ -1,15 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <HeaderCom/>
+  <FrontCom/>
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> --> 
+
+  <FooterCom/>
+
+ 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+import HeaderCom from './components/HeaderCom.vue'
+import FrontCom from './components/FrontCom.vue'
+import FooterCom from './components/FooterCom.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    //HelloWorld,
+    HeaderCom,
+    FrontCom,
+    FooterCom
   }
 }
 </script>
