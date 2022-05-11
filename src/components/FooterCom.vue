@@ -1,5 +1,5 @@
 <template>
-  <div class="HeaderCom">
+  <div class="FooterCom">
     <div class="container">
       <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -18,8 +18,21 @@
 
 
 <script>
+import axios from 'axios'
+
+
+
+
 export default {
   name: 'FooterCom',
+  mounted() {
+    axios
+      .get('https://calm-meadow-27583.herokuapp.com/api/person/')
+      .then((response) => {
+        console.log(response)
+      })
+  }
+
 
 }
 </script>
