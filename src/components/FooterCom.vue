@@ -25,13 +25,7 @@ import axios from 'axios'
 
 export default {
   name: 'FooterCom',
-  mounted() {
-    axios
-      .get('https://calm-meadow-27583.herokuapp.com/api/person/')
-      .then((response) => {
-        console.log(response)
-      })
-  }
+  
 
 
 }
