@@ -1,4 +1,5 @@
-# rem_front
+# Resume_site_frontend
+# Make API calls to backend which provides resume information.
 
 ## Project setup
 ```
