@@ -1,5 +1,6 @@
 # Resume_site_frontend
-# Make API calls to backend which provides resume information.
+
+Make API calls to backend which provides resume information. to be used in conjuction with resume_backend_heroku
 
 ## Project setup
 ```
