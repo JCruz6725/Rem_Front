@@ -1,18 +1,34 @@
 <template>
   <div class="FrontCom">
     <div class="container py-4">
-      <div class="p-5 mb-4 bg-light rounded-3">
-        <div class="container-fluid py-5">
-          <h1 class="display-5 fw-bold">{{ person.full_name }} | {{person.location}}</h1>
-          <p class="col-md-8 fs-4">{{ resume.summary }}</p>
+      <div class="p-5 mb-4 bg-light border rounded-3">
+        <div class="container-fluid">
+          <h1 class="display-5 fw-bold">{{ person.full_name }} | {{resume.title}} | {{person.location}}</h1>
+          <p>{{ resume.summary }}</p>
+          <div class="container bg-danger">
+            <div class="row">
+              <div class="col border rounded-10"> {{resume.skills}} </div>
+              <div class="col border"> {{resume.related_courses}} </div>
+              <div class="col border">  </div>
+              
+              
+            </div>
+          </div>
+
+
           <button class="btn btn-primary btn-lg" type="button"> programmeing skills????? </button>
         </div>
       </div>
     </div>
 
-    <div class="container py-4">
+
+
+
+
+
+    <div class="container">
       <div v-for="(p, i) in professionals" :key="i">
-        <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="p-3 mb-4 bg-light border rounded">
           <div class="container-fluid py-5"> 
           <h4 class="display-10 fw-bold"> {{ p.employer_name }} | {{ p.position }} | {{p.title_of_project}} | {{ p.time_at }} </h4>
           <p> {{ p.summary }} </p>
@@ -27,17 +43,17 @@
 
 
 
-<div class="container">
-  <div class="row align-items-md-stretch">
-      <div v-for="(p, i) in projects" :key="i" class="col-md-6">
-        <div class=" p-5 text-dark bg-light border rounded-3">
-          <h4>{{p.project_name}} | {{p.tech_used}} </h4>
-          <p> {{ p.summary }} </p>
-          <button class="btn btn-outline-primary" type="button">GitHub</button>
-        </div>
+    <div v-for="(p, i) in projects" :key="i" class="container-fluid bg-secondary">
+      <div class="row justify-content-center ">
+          <div class="col-md-6 t-5 b-5">
+            <div class=" p-5 text-dark bg-light border rounded-3">
+              <h4>{{p.project_name}} | {{p.tech_used}} </h4>
+              <p> {{ p.summary }} </p>
+              <button class="btn btn-outline-primary" type="button">GitHub</button>
+            </div>
+          </div>
       </div>
-  </div>
-</div>
+    </div>
 
 
   </div>
