@@ -1,4 +1,7 @@
-# rem_front
+# Resume_site_frontend
+
+Make API calls to backend which provides resume information. To be used in conjuction with resume_backend_heroku. current implementation is deploy on netlify
+
 
 ## Project setup
 ```
