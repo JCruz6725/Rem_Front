@@ -69,7 +69,7 @@ export default {
   
   mounted() {
     axios
-      .get('http://calm-meadow-27583.herokuapp.com/api/person/1')
+      .get('https://calm-meadow-27583.herokuapp.com/api/person/1')
       .then((response) => {
         this.person = response.data
         this.resume = response.data.resume[0]
