@@ -3,19 +3,44 @@
     <div class="container py-4">
       <div class="p-5 mb-4 bg-light border rounded-3">
         <div class="container-fluid">
-          <h1 class="display-5 fw-bold">{{ person.full_name }} | {{resume.title}} | {{person.location}}</h1>
-          <p>{{ resume.summary }}</p>
-          <div class="container rounded">
-            <div class="row">
-              <div class="col border"> {{resume.skills}} </div>
-              <div class="col border"> {{resume.related_courses}} </div>
-              <div class="col border"> asdfasdf </div>
+          <h2 class="fw-bold">{{ person.full_name }} | {{resume.title}} | {{person.location}}</h2>
+          <p class="container border rounded">{{ resume.summary }}</p>
+            <div class="container border rounded">
+              <div class="row">programming lang:
+                <div class="col border">{{resume.programming_skills}}</div>
+              </div>
+              <div class="row"> related_courses:
+                <div class="col border"> {{resume.related_courses}} </div>
+              </div>
+              <div class="row"> misc_tools:
+                <div class="col border"> {{resume.office_tools}} </div>
+              </div>
+                <div class="row"> programming tools: 
+                  <div class="col border"> {{resume.industry_tools}} </div>
+                </div>
+              </div>
             </div>
-          </div>
-          <button class="btn btn-primary btn-lg" type="button"> programmeing skills????? </button>
+        </div>
+      </div>
+
+
+
+    <div class="container ">
+      <p class="fw-bold text-start border-bottom">Eduaction Background</p>
+      <div class="container-lg">
+        <div class="p-5 mb-4 bg-light border rounded-3">
+          <div v-for ="(e, i) in education" :key="i" class="container-fluid border">
+            <h4> {{e.institution_name}} | {{e.location}} | {{e.time_at}} </h4>
+            <h5> {{e.degree}} </h5>
+            </div>
         </div>
       </div>
     </div>
+
+
+
+
+   
     <div class="container ">
       <p class="fw-bold text-start border-bottom">Professional Work History</p>
       <div class="container-lg">
@@ -24,7 +49,7 @@
             <div class="container-fluid py-5"> 
             <h4 class="display-10 fw-bold"> {{ p.employer_name }} | {{ p.position }} | {{p.title_of_project}} | {{ p.time_at }} </h4>
             <p> {{ p.summary }} </p>
-            <button class="btn btn-primary btn-lg" type="button">eCommerce store</button>
+            <button class="btn btn-outline-primary btn-lg" type="button">eCommerce store</button>
             </div>
           </div>
         </div>
