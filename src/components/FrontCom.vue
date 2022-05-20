@@ -19,7 +19,7 @@
     </div>
 
 
-<div class="container">  
+  <div class="container ">
   <p class="fw-bold text-start border-bottom">Skills</p>
 
             <div class="container py-3 bg rounded">
@@ -42,7 +42,6 @@
 
             </div>
         </div>
-      
 
 
 
@@ -51,8 +50,8 @@
 
 
 
-   
-    <div class="container py-4">
+
+    <div class="container">
       <p class="fw-bold text-start border-bottom">Professional Work History</p>
       <div class="container-lg">
         <div v-for="(p, i) in professionals" :key="i">
@@ -60,7 +59,6 @@
             <div class="container-fluid py-5"> 
             <h4 class="display-10 fw-bold"> {{ p.employer_name }} | {{ p.position }} | {{p.title_of_project}} | {{ p.time_at }} </h4>
             <p> {{ p.summary }} </p>
-            <button class="btn btn-outline-primary btn-lg" type="button">eCommerce store</button>
             </div>
           </div>
         </div>
@@ -73,12 +71,20 @@
             <div class=" p-5 text-dark bg-light border rounded-3">
               <h4>{{p.project_name}} | {{p.tech_used}} </h4>
               <p> {{ p.summary }} </p>
-              <button class="btn btn-outline-primary" type="button">GitHub</button>
+              <button class="btn btn-outline-primary" type="button"> {{p.project_name}} </button>
             </div>
           </div>
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
 </template>
 
 

@@ -1,8 +1,11 @@
 <template>
 
+
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"          maybe add and if statment here to wait for api to load      /> --> 
+
   <HeaderCom/>
   <FrontCom/>
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> --> 
+
 
   <FooterCom/>
 
