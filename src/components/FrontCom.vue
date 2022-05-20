@@ -1,6 +1,11 @@
 <template>
   <div class="FrontCom">
-    
+    <div v-if="loaded">
+
+
+
+
+
       <div class="container p-5 mb-4 bg-light border rounded-3">
         <div class="container-fluid">
           <h2 class="fw-bold">{{ person.full_name }} | {{resume.title}} | {{person.location}}</h2>
@@ -78,7 +83,14 @@
     </div>
   </div>
 
+<div v-else>
+  <div class="spinner-border text-secondary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
 
+
+</div>
 
 
 
@@ -93,6 +105,9 @@
 
 import axios from 'axios'
 
+var loaded = false
+
+
 export default {
   name: 'FrontCom',
 
@@ -103,6 +118,7 @@ export default {
       projects: [],
       professionals: [],
       education: [],
+      loaded: loaded
     } 
   },
 
@@ -117,6 +133,15 @@ export default {
         this.education = response.data.education
         this.projects = response.data.project
         this.professionals = response.data.professional
+        
+        if(this.person!== null){
+          this.loaded =  true
+        }
+            
+
+
+
+
         //console.log(response)
       })
   },
