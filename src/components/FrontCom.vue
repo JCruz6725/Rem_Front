@@ -70,7 +70,9 @@
       </div>
     </div>
 
-    <div v-for="(p, i) in projects" :key="i" class="container-fluid bg-secondary bg-opacity-50">
+<div class="container">
+<p class="fw-bold text-start border-bottom"> projects </p>
+    <div v-for="(p, i) in projects" :key="i" class="">
       <div class="row justify-content-center p-1">
           <div class="col-md-6 t-5 b-5">
             <div class=" p-5 text-dark bg-light border rounded-3">
@@ -81,6 +83,31 @@
           </div>
       </div>
     </div>
+</div>
+<!--  Contact Me  -->
+
+  <div class="container py-4" id="contact_me_info">
+
+    <div class=" contianer border bg-light rounded">
+      <h1> Contact </h1>
+    <div>
+      <p> {{person.full_name}} </p>
+      <p> Aspiring {{ resume.title }} </p>
+      <p> Email - {{person.email}} </p>
+      
+    </div>
+    </div>
+    
+
+
+  </div>
+
+
+
+
+
+
+
   </div>
 
 <div v-else>
@@ -91,10 +118,6 @@
 
 
 </div>
-
-
-
-
 
 
 </template>

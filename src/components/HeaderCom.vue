@@ -14,6 +14,7 @@
           <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
           <li><a href="https://github.com/JCruz6725" target="_blank" class="nav-link px-2 link-dark">GitHub</a></li>
           <li><a href="https://www.hackerrank.com/john_cruz6725" target="_blank" class="nav-link px-2 link-dark">HackerRank</a></li>
+          <li><a href="#contact_me_info" target="" class="nav-link px-2 link-dark">Contact Me</a></li> <!-- need to make this move to contact me part of page -->
         </ul>
         <div class="col-md-3 text-end">
           <button type="button" class="btn btn-outline-primary me-2">Login</button>
