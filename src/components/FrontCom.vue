@@ -71,7 +71,7 @@
     </div>
 
 <div class="container">
-<p class="fw-bold text-start border-bottom"> projects </p>
+<p class="fw-bold text-start border-bottom"> Projects </p>
     <div v-for="(p, i) in projects" :key="i" class="">
       <div class="row justify-content-center p-1">
           <div class="col-md-6 t-5 b-5">
