@@ -11,38 +11,42 @@
           <h2 class="fw-bold">{{ person.full_name }} | {{resume.title}} | {{person.location}}</h2>
           <p class="container rounded">{{ resume.summary }}</p>
 
-    <div class="container py-3">
-      <p class="fw-bold text-start border-bottom  ">Education Background</p>
-      <div class="container-lg  rounded-3">
+      <div class="container py-3">
         
-          <div v-for ="(e, i) in education" :key="i" class="container-fluid">
-            <h4> {{e.institution_name}} | {{e.location}} | {{e.time_at}} </h4>
-            <h5> {{e.degree}} </h5>
-            </div>
+        <div class="fw-bold text-start border-bottom ">Education Background  </div>
+
         
+        <div class="container-lg  rounded-3">
+          
+            <div v-for ="(e, i) in education" :key="i" class="container-fluid">
+              <h4> {{e.institution_name}} | {{e.location}} | {{e.time_at}} </h4>
+              <h5> {{e.degree}} </h5>
+              </div>
+          <div v-if="is_auth"> <button class="btn btn-outline-info ">+</button> <!--   need logic for auth   --> </div>
+        
+        </div>
       </div>
-    </div>
 
 
-  <div class="container ">
-  <p class="fw-bold text-start border-bottom">Skills</p>
+      <div class="container ">
+      <p class="fw-bold text-start border-bottom">Skills</p>
 
-            <div class="container py-3 bg rounded">
-              <div class="row fw-bold">Known Programming Languages:
-                <div class="col fw-normal">{{resume.programming_skills}}</div>
-              </div>
-              <div class="row fw-bold"> Courses Taken:
-                <div class="col fw-normal"> {{resume.related_courses}} </div>
-              </div>
-              <div class="row fw-bold"> Office Tools:
-                <div class="col fw-normal"> {{resume.office_tools}} </div>
-              </div>
-                <div class="row fw-bold"> Tech tools: 
-                  <div class="col fw-normal"> {{resume.industry_tools}} </div>
-                </div>
-              </div>
+      <div class="container py-3 bg rounded">
+        <div class="row fw-bold">Known Programming Languages:
+          <div class="col fw-normal">{{resume.programming_skills}}</div>
+        </div>
+        <div class="row fw-bold"> Courses Taken:
+          <div class="col fw-normal"> {{resume.related_courses}} </div>
+        </div>
+        <div class="row fw-bold"> Office Tools:
+          <div class="col fw-normal"> {{resume.office_tools}} </div>
+        </div>
+          <div class="row fw-bold"> Tech tools: 
+            <div class="col fw-normal"> {{resume.industry_tools}} </div>
+          </div>
+        </div>
 
-</div>
+      </div>
 
 
             </div>
@@ -68,8 +72,23 @@
           </div>
         </div>
       </div>
+
+    <div v-if="is_auth">
+
+            <div class="p-5 mb-4 bg-light border rounded-3">
+            <div class="container"> 
+            <h4 class="display-10 fw-bold"> Add Work Hist </h4>
+            <button @click="add_to_professional" class="btn btn-outline-info ">+</button> <!--   need logic for auth   -->
+            </div>
+          </div>
+
     </div>
 
+
+    </div>
+
+    
+    
 <div class="container">
 <p class="fw-bold text-start border-bottom"> Projects </p>
     <div v-for="(p, i) in projects" :key="i" class="">
@@ -78,11 +97,23 @@
             <div class=" p-5 text-dark bg-light border rounded-3">
               <h4>{{p.project_name}} | {{p.tech_used}} </h4>
               <p> {{ p.summary }} </p>
-              <button class="btn btn-outline-primary" type="button"> {{p.project_name}} </button>
+              <button class="btn btn-outline-primary"  type="button" onclick="window.location.href='https://github.com/JCruz6725/Resume_Site_Frontend';"> {{p.project_name}} </button>
             </div>
           </div>
       </div>
     </div>
+</div>
+
+
+<div v-if="is_auth"> 
+<div class="row justify-content-center p-1">
+          <div class="col-md-6 t-5 b-5">
+            <div class=" p-5 text-dark bg-light border rounded-3">
+              <h4> Add New Project</h4>
+              <button @click="add_to_project" class="btn btn-outline-info " >+</button> 
+            </div>
+          </div>
+      </div>
 </div>
 <!--  Contact Me  -->
 
@@ -97,17 +128,7 @@
       
     </div>
     </div>
-    
-
-
   </div>
-
-
-
-
-
-
-
   </div>
 
 <div v-else>
@@ -129,6 +150,8 @@
 import axios from 'axios'
 
 var loaded = false
+var is_auth = true
+var url_backend = "https://calm-meadow-27583.herokuapp.com/api/"
 
 
 export default {
@@ -141,7 +164,8 @@ export default {
       projects: [],
       professionals: [],
       education: [],
-      loaded: loaded
+      loaded: loaded,
+      is_auth: is_auth
     } 
   },
 
@@ -149,7 +173,7 @@ export default {
   
   mounted() {
     axios
-      .get('https://calm-meadow-27583.herokuapp.com/api/person/1')
+      .get(url_backend+'person/1')
       .then((response) => {
         this.person = response.data
         this.resume = response.data.resume[0]
@@ -160,7 +184,7 @@ export default {
         if(this.person!== null){
           this.loaded =  true
         }
-            
+
 
 
 
@@ -168,6 +192,25 @@ export default {
         //console.log(response)
       })
   },
+  
+  methods: {
+    add_to_project(){
+      this.projects.push( {project_name:" asd", tech_used: " asd", summary: " dd", }  )
+    },
+
+    add_to_professional(){
+      this.professionals.push( {employer_name:" asd", position: " asd", title_of_project: " dd", time_at: " dd", summary: " dd", }  )
+
+
+    },
+
+    save(){
+
+    }
+
+
+  }
+
 }
 
 
