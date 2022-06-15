@@ -97,7 +97,7 @@
             <div class=" p-5 text-dark bg-light border rounded-3">
               <h4>{{p.project_name}} | {{p.tech_used}} </h4>
               <p> {{ p.summary }} </p>
-              <button class="btn btn-outline-primary"  type="button" onclick="window.location.href='https://github.com/JCruz6725/Resume_Site_Frontend';"> {{p.project_name}} </button>
+              <button class="btn btn-outline-primary"  type="button" onclick="window.location.href='{{ project.external_link }}';"> {{p.project_name}} </button>
             </div>
           </div>
       </div>
@@ -150,8 +150,8 @@
 import axios from 'axios'
 
 var loaded = false
-var is_auth = true
-var url_backend = "https://calm-meadow-27583.herokuapp.com/api/"
+var is_auth = false
+var url_backend = "https://johndjangodev.herokuapp.com/"
 
 
 export default {
@@ -173,7 +173,7 @@ export default {
   
   mounted() {
     axios
-      .get(url_backend+'person/1')
+      .get(url_backend+'profile/john.cruz6725@gmail.com/')
       .then((response) => {
         this.person = response.data
         this.resume = response.data.resume[0]
@@ -196,6 +196,18 @@ export default {
   methods: {
     add_to_project(){
       this.projects.push( {project_name:" asd", tech_used: " asd", summary: " dd", }  )
+},
+
+/// this is what we will use to post
+    add_to_project222(){
+      axios
+        .post()
+        .then((response) => {
+          console.log(response)
+
+        })
+  
+      
     },
 
     add_to_professional(){
