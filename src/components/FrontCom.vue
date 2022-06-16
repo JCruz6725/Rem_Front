@@ -97,7 +97,10 @@
             <div class=" p-5 text-dark bg-light border rounded-3">
               <h4>{{p.project_name}} | {{p.tech_used}} </h4>
               <p> {{ p.summary }} </p>
-              <button class="btn btn-outline-primary"  type="button" onclick="window.location.href='{{ project.external_link }}';"> {{p.project_name}} </button>
+
+              <!--     fix this button       -->
+
+              <button class="btn btn-outline-primary" type="button" onclick="window.open({{ p.external_link }})"> {{p.project_name}} </button>
             </div>
           </div>
       </div>
@@ -151,7 +154,7 @@ import axios from 'axios'
 
 var loaded = false
 var is_auth = false
-var url_backend = "https://johndjangodev.herokuapp.com/"
+var url_backend = "https://calm-meadow-27583.herokuapp.com/"
 
 
 export default {
