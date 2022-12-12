@@ -1,41 +1,42 @@
 <template>
 
 
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"          maybe add and if statment here to wait for api to load      /> --> 
+  <HeaderCom />
+  <ResumeComp />
 
-  <HeaderCom/>
-  <FrontCom/>
+  <FooterCom />
 
 
-  <FooterCom/>
-
- 
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld.vue'
-import HeaderCom from './components/HeaderCom.vue'
-import FrontCom from './components/FrontCom.vue'
-import FooterCom from './components/FooterCom.vue'
+import HeaderCom from './components/HeaderCom.vue';
+//import FrontCom from './components/FrontCom.vue';
+import FooterCom from './components/FooterCom.vue';
+//import ColBut from "./components/extras/ColBut.vue";
+import ResumeComp from "./components/extras/ResumeComp.vue";
+
+
+
+
 
 export default {
   name: 'App',
   components: {
-    //HelloWorld,
     HeaderCom,
-    FrontCom,
-    FooterCom
+    //FrontCom,
+    ResumeComp,
+    FooterCom,
+    //ColBut
+
+
+  },
+  data() {
+    return {
+      k: "HERE",
+      g: "here"
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
